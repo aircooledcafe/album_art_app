@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album Art Finder</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" type="image/png" href="./favicon.png"/>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>iTunes Album Art Finder</h1>
+            <p>Search for and download high-quality album artwork using the iTunes API.</p>
+        </header>
+
+        <form id="searchForm" class="search-form">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="artistName">Artist Name</label>
+                    <input type="text" id="artistName" name="artistName" 
+                           placeholder="e.g., Pink Floyd">
+                </div>
+                <div class="form-group">
+                    <label for="albumName">Album Name</label>
+                    <input type="text" id="albumName" name="albumName"
+                           placeholder="e.g., The Dark Side of the Moon">
+                </div>
+                <button type="submit" class="btn-primary">Search</button>
+            </div>
+        </form>
+
+        <div id="loadingIndicator" class="loading-container hidden">
+            <div class="spinner"></div>
+            <p style="margin-top: 0.5rem; color: var(--text-muted);">Searching for albums...</p>
+        </div>
+        
+        <div id="messageArea"></div>
+
+        <div id="resultsArea" class="results-grid"></div>
+
+        <div id="paginationControls" class="pagination hidden">
+            <button id="prevPage" class="btn-secondary">&laquo; Previous</button>
+            <span id="pageInfo"></span>
+            <button id="nextPage" class="btn-secondary">Next &raquo;</button>
+        </div>
+    </div>
+
+    <div id="downloadModal" class="modal-backdrop hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalAlbumTitle">Download Artwork</h2>
+                <button id="closeModal" class="close-modal">&times;</button>
+            </div>
+            <img id="modalAlbumArt" src="" alt="Album Art" class="modal-img">
+            <div class="modal-subheader">Download Artwork</div>
+            <div id="downloadLinks" class="download-list"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

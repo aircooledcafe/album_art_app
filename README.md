@@ -1,3 +1,7 @@
 # Album Art Web App
 
-A sinlge page web app to grab album art using the iTunes API.
+A web app to retreive album art from the iTunes API.
+
+Provides the option to download several different resolutions.
+
+Only external dependancy is the iTune API.
