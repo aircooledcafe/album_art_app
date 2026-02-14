@@ -16,7 +16,7 @@ const modalAlbumArt = document.getElementById('modalAlbumArt');
 const downloadLinksContainer = document.getElementById('downloadLinks');
 const closeModalButton = document.getElementById('closeModal');
 
-const RESULTS_PER_PAGE = 72;
+const RESULTS_PER_PAGE = 40;
 let currentPage = 1;
 let totalResults = 0;
 let currentAlbumResults = [];
