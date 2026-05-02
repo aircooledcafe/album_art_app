@@ -101,7 +101,7 @@ function displayResultsPage() {
 function createAlbumCard(album) {
     // 1. Create Card Container
     const card = document.createElement('div');
-    card.className = 'album-card'; // Changed from Tailwind classes
+    card.className = 'album-card';
 
     const releaseYear = album.releaseDate ? new Date(album.releaseDate).getFullYear() : 'N/A';
     
@@ -196,7 +196,7 @@ async function forceDownload(url, filename, button) {
     try {
         const response = await fetch(url);
         if (!response.ok) {
-            throw new Error('Network response was not ok');
+            throw new Error(`Network response ${response.statusText} (Status: ${response.status})`);
         }
         const blob = await response.blob();
         const blobUrl = window.URL.createObjectURL(blob);
